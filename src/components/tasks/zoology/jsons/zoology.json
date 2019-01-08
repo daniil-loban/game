@@ -1,0 +1,11 @@
+{"name" : "Зоология", "type" : "zoology", 
+  "taskList":[
+    {"id":0, "description":"Кто изображен на картинке?", "mark":3,
+    "componentInfo": {"name": "simple-image", "data": {
+        "files":"./items.json", "placeholder":"Введи название"
+        }
+      }
+    }
+  ]
+ }
+ 

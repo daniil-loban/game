@@ -1,0 +1,15 @@
+{"name" : "Рисование", "type" : "painting", 
+  "taskList":[
+    {"id":0, "description":"Выбери $ цвет", "mark":3,
+      "componentInfo": {"name": "color-selector", 
+        "data": [
+          {"name": "красный", "value": "red"},
+          {"name": "синий", "value": "blue"},
+          {"name": "желтый", "value": "yellow"},
+          {"name": "коричневый", "value": "brown"},
+          {"name": "лиловый", "value": "magenta"}
+        ] 
+      }
+    }
+  ]
+ }

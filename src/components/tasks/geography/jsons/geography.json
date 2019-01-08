@@ -1,0 +1,10 @@
+{"name" : "География", "type" : "geography", 
+  "taskList":[
+    {"id":0, "description":"Сопоставь страны и столицы", "mark":3,
+    "componentInfo": {"name": "words-pairs", "data": {
+        "files":"./countries.json", "placeholder":""
+        }
+      }
+    }
+  ]
+ }

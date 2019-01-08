@@ -1,0 +1,17 @@
+{"name" : "Математика", "type" : "math", 
+  "taskList":[
+    {"id":0, "description":"Сложи числа", "mark":3,
+      "componentInfo": {"name": "simple-math", "data": {"operation":"+", "placeholder": "Введи результат" }}
+    },
+    {"id":1, "description":"Перемножь числа", "mark":3,
+      "componentInfo": {"name": "simple-math", "data": {"operation":"*", "placeholder": "Введи результат" }}
+    },
+    {"id":2, "description":"Найди частное от деления", "mark":3,
+      "componentInfo": {"name": "simple-math", "data": {"operation":"/", "placeholder": "Введи результат"}}
+    },
+    {"id":3, "description":"Произведи вычитание", "mark":3,
+      "componentInfo": {"name": "simple-math", "data": {"operation":"-", "placeholder": "Введи результат"}}
+    }
+  ]
+ }
+ 

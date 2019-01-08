@@ -1,0 +1,9 @@
+{
+  "subjects": {
+    "painting": {"name": "Рисование", "taskList": {}},
+    "math": {"name": "Математика", "taskList": {}},
+    "english": {"name": "Aнглийский", "taskList": {}},
+    "geography": {"name": "География", "taskList": {}},
+    "zoology": {"name": "Зоология", "taskList": {}}
+  }
+}

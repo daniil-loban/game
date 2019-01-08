@@ -1,0 +1,85 @@
+@import '../scss_mixins/mixins.scss';
+@include font-face('Werfus', 'fonts/Werfus', null, null, 'ttf');
+@include font-face('Ogilvie', 'fonts/ogilvie',null, null, 'ttf');
+@include font-face('Amsterdam', 'fonts/Amsterdam',null, null, 'ttf');
+
+%wrapper {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.screen-wrapper {
+	@extend %wrapper;
+	top: 0;
+}
+
+.under-screen-wrapper{
+	@extend %wrapper;
+	display:block;
+	top: 100%;
+}
+
+.under-screen-wrapper2{
+	@extend %wrapper;
+	display:block;
+	top: 200%;
+}
+
+.big-font{
+	size: 4em;	
+}
+
+.flex-column {
+  display: flex;
+  flex: {
+    direction: column;
+  } 
+  align-items: center;
+}
+
+%defaultText{
+  text-align: center;
+  padding: 5px;
+  margin: 10px;
+}
+
+.ugly{
+  @extend %defaultText;
+	font-family: 'ogilvie', serif;
+}
+
+.beautiful{
+  @extend %defaultText;
+	color: rgb(49, 0, 228);
+  font-family: 'Werfus', serif;
+	font: {
+		size: 2.5em;
+		width: 700;
+  }
+}
+
+.user{
+  @extend %defaultText;
+  margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	max-width: 50%;
+	max-height: 50px;
+	font: {
+		family: 'Amsterdam', serif;
+		size: 2em
+	}
+	color: black;
+} 
+
+.left-join {
+	margin-left: 0 !important;
+}	
+
+.rigth-join {
+	margin-right: 0 !important;
+}	

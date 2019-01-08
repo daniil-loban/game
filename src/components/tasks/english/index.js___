@@ -1,0 +1,89 @@
+const DROP_AREA_HIGHLIGHT = 'drop-area-highlight';
+let allDoropAreas;
+let allDragWords;
+let currentDragOverElement = null;
+
+function dragOverCheck(x, y) {
+  for (let i = 0; i < allDoropAreas.length; i += 1) {
+    const dest = allDoropAreas[i];
+    const rc = dest.getBoundingClientRect();
+    if (x > rc.left && x < rc.right && y > rc.top && y < rc.bottom) {
+      if (currentDragOverElement !== null) {
+        currentDragOverElement.classList.remove(DROP_AREA_HIGHLIGHT);
+      }
+      currentDragOverElement = dest;
+      currentDragOverElement.classList.add(DROP_AREA_HIGHLIGHT);
+      return dest;
+    }
+  }
+  return true;
+}
+
+function touchMove(e) {
+  const event = e;
+  if (!event.target.classList.contains('drag-element')) return false;
+  const touchLocation = event.targetTouches[0];
+  event.target.classList.add('dragged-now');
+  const compStyles = window.getComputedStyle(event.target);
+  const width = parseInt(compStyles.width, 10);
+  const height = parseInt(compStyles.height, 10);
+  event.target.style.left = `${touchLocation.pageX - width / 2}px`;
+  event.target.style.top = `${touchLocation.pageY - height * 2}px`;
+  dragOverCheck(touchLocation.pageX, touchLocation.pageY);
+  return true;
+}
+
+function touchEnd(event) {
+  const dest = currentDragOverElement;
+  event.target.classList.remove('dragged-now');
+  if (dest && !dest.classList.contains('drag-element')) {
+    dest.appendChild(event.target);
+    dest.classList.remove(DROP_AREA_HIGHLIGHT);
+  }
+}
+
+function drop(event) {
+  event.preventDefault();
+  const data = event.dataTransfer.getData('text');
+  if (!event.target.classList.contains('drag-element')) {
+    event.target.appendChild(document.getElementById(data));
+    event.target.classList.remove(DROP_AREA_HIGHLIGHT);
+  }
+}
+
+function dragLeave(event) {
+  event.currentTarget.classList.remove(DROP_AREA_HIGHLIGHT);
+}
+
+function allowDrop(event) {
+  event.preventDefault();
+  event.currentTarget.classList.add(DROP_AREA_HIGHLIGHT);
+}
+
+
+function drag(event) {
+  if (!event.target.classList.contains('drag-element')) return false;
+  event.dataTransfer.setData('text', event.target.id);
+  return true;
+}
+
+
+function initialize() {
+  allDoropAreas = document.querySelectorAll('.drop-area');
+  allDragWords = document.querySelectorAll('.drag-element');
+
+  allDragWords.forEach((element) => {
+    element.addEventListener('dragstart', drag, false);
+    element.setAttribute('draggable', 'true');
+  });
+
+  allDoropAreas.forEach((element) => {
+    element.addEventListener('touchmove', touchMove, false);
+    element.addEventListener('touchend', touchEnd, false);
+    element.addEventListener('drop', drop, false);
+    element.addEventListener('dragover', allowDrop, false);
+    element.addEventListener('dragleave', dragLeave, false);
+  });
+}
+
+export default initialize;

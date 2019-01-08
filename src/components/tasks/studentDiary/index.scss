@@ -1,0 +1,25 @@
+.all-tasks-list {
+  list-style-type: none;
+  list-style-position: inside;
+  padding-inline-start: 0;
+}
+
+.bold {
+  font-weight: bold;
+} 
+
+.task{
+  padding: 5px;
+} 
+
+.task:hover{
+  background-color:gold;
+} 
+
+.choose {
+  display: block;
+}
+
+[checked]{
+  color: red;
+}

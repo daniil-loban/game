@@ -1,0 +1,28 @@
+.border {
+  width: 350px;
+  min-height:  2em;
+  border: 1px solid #aaa;
+}
+.drop-area {
+  min-height:  2em;
+}
+.selected {
+  border: 2px solid brown;
+  background-color: lighten($color: gold, $amount: 30);
+}
+.drag-element{
+  display: inline-block;
+  width: initial;
+  font-size: 16px;
+  border: 2px solid gold;
+  border-radius: 2em;
+  padding: 5px;
+}
+.dragged-now {
+  position: absolute;
+  opacity: 0.7;
+}    
+.drop-area-highlight{
+  border: 1px solid gold;
+}
+

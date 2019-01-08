@@ -1,0 +1,11 @@
+import { mount } from '@vue/test-utils';
+import fortest from './fortest.vue';
+
+describe('fortest.vue', () => {
+  test('increment', () => {
+    const wrapper = mount(fortest);
+    expect(wrapper.text()).toContain('counter: 0');
+    wrapper.find('button').trigger('click');
+    expect(wrapper.text()).toContain('counter: 1');
+  });
+});

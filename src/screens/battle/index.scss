@@ -1,0 +1,106 @@
+$hp-height : 20px;
+
+.battle-background{
+
+  background: url('./images/sheet.png');
+  
+}
+.battle-action-button{
+   background: url('./images/lastik.png') no-repeat;
+   width: 141px;
+   height: 100px;
+   background-size: 141px 100px;
+   border-width: 0px;
+   border-radius: 10px;
+   
+   -webkit-box-shadow: 10px 5px 20px 0px rgba(151, 149, 140, 0.87);
+   -moz-box-shadow:    10px 5px 20px 0px rgba(151, 149, 140, 0.87);
+   box-shadow:         10px 5px 20px 0px rgba(151, 149, 140, 0.87);
+   margin: 0 auto;
+}
+
+.scores{
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top:0;
+  color: black;
+  background-color: gold;
+  background-image: url('./images/ruler.png');
+  background-repeat: repeat-x;  
+  border-bottom: 1px solid white; 
+  -webkit-box-shadow: 10px 5px 11px 0px rgba(93, 86, 50, 0.87);
+  -moz-box-shadow:    10px 5px 11px 0px rgba(93, 86, 50, 0.87);
+  box-shadow:         10px 5px 11px 0px rgba(93, 86, 50, 0.87);
+}
+
+%score {
+  width: 40%;
+  text-align: center;
+  font: {
+    size: 1em;
+  }
+}
+
+.user-score{
+  @extend %score;
+  float: left;
+  font: {
+		family: 'Amsterdam', serif;
+	}
+}
+
+%hp {
+  height: $hp-height;
+  border-radius: 10px;
+}
+
+.hp-wrapper {
+  box-sizing: border-box;
+  padding: 2px;
+  border-radius: 15px;
+  border: 2px solid white; 
+  width: 70%;
+  margin: 5px;
+}
+.user-hp {
+  @extend %hp;
+  background-color: green;
+  align-self: flex-start;
+}
+
+.monster-hp {
+  @extend %hp;
+  background-color: red;
+  align-self: flex-end;
+}
+
+.monster-score{
+  @extend %score;
+  float: right;
+  color: red;
+  font: {
+    font-family: 'ogilvie', serif;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+  }
+  letter-spacing: 4px;
+}
+
+
+
+
+.battle-canvas {
+  background-color: rgb(190, 15, 15);
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.battle-canvas-wrapprer{
+  color: black;
+}
+
