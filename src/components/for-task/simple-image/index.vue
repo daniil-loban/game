@@ -52,6 +52,10 @@ export default {
     this.variants = imagesInfo.files.map(e => e.rus[0]).sort();
     this.makeAlphabetNavigator();
   },
+  updated(){
+    this.$el.querySelector('input').focus();
+ 
+  },
   methods: {
     keyDown(key) {
       switch (key) {

@@ -57,6 +57,9 @@ export default {
     this.variants = data.words.map(e => e.split(data.separator)[ENGLISH]).sort();
     this.makeAlphabetNavigator();
   },
+  updated(){
+    this.$el.querySelector('input').focus();
+  },
   methods: {
     keyDown(key) {
       switch (key) {

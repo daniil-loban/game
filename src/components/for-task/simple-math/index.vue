@@ -46,6 +46,10 @@ export default {
     this.variants = Array.apply(Array, new Array(this.countVariants))
       .map(() => this.expected - Math.floor(Math.random() * this.expected * 2));
     this.variants[Math.floor(Math.random() * this.countVariants)] = this.expected;
+
+  },
+  updated(){
+    this.$el.querySelector('input').focus();
   },
   methods: {
     keyDown(key) {
