@@ -50,7 +50,12 @@
 
 .ugly{
   @extend %defaultText;
-	font-family: 'ogilvie', serif;
+	
+	font: {
+		family: 'ogilvie', serif;
+		weight: 600;
+  }
+
 }
 
 .beautiful{
@@ -59,7 +64,7 @@
   font-family: 'Werfus', serif;
 	font: {
 		size: 2.5em;
-		width: 700;
+		weight: 600;
   }
 }
 

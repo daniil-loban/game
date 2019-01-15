@@ -13,7 +13,7 @@
         </p>
         <button
           class="user"
-          @click="goToLogin"
+          @click="goToBattle"
         >
           играть
         </button>
@@ -33,13 +33,13 @@ export default {
     };
   },
   methods: {
+    goToBattle(){
+      this.$root.goToBattle();
+    },
     keyDown(key) {
       if (key === 'Space' || key === 'Enter') {
-        this.$root.goToBattle();
+        this.goToBattle();
       }
-    },
-    goToLogin() {
-      this.$root.gotoBattle();
     },
   },
 };

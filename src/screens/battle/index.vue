@@ -55,13 +55,16 @@ export default {
     },
     showTaskSelector() {
       this.$root.showTaskSelector()
-        .then(() => { animation.setMonsterHp(this.$store.state.monsterHP); })
+        .then(() => { 
+          const monsterHP = this.$store.state.monsterHP;
+          animation.setMonsterHp(monsterHP); 
+          if (monsterHP === 0) {
+            this.$store.dispatch('monsterHP', 100);
+          }
+        })
         .then(() => {
           if (this.$store.state.userHP <= 0) { this.$parent.goToScore(); }
         });
-    },
-    goToLogin() {
-      this.$root.gotoLogin();
     },
     getCanvas() {
       return this.$el.querySelector('#battle-canvas');

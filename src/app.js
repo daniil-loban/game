@@ -59,15 +59,16 @@ const settings = {
 
 function loaderResources() {
   return new Promise((resolve) => {
+    // stub
     setTimeout(() => {
       resolve();
-    }, 10);
+    }, 3000);
   });
 }
 
 async function loaderFunc(resources) {
-  await loaderResources(resources);
-  loaderComponent.hide();
+  loaderResources(resources)
+    .then(() => loaderComponent.hide());
 }
 
 const app = new Vue({
@@ -139,7 +140,7 @@ const app = new Vue({
   },
 });
 
-
+/*
 function playSound(url) {
   const audio = document.createElement('audio');
   audio.style.display = 'none';
@@ -150,7 +151,7 @@ function playSound(url) {
   };
 }
 playSound(settings.sounds.intro);
-
+*/
 
 export default {
   app,

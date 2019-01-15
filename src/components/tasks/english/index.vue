@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>{{ description }}</h2>
+    <h2 class="sub-caption">{{ description }}</h2>
     <KeepAlive>
       <Component
         :is="taskComponentLoader"

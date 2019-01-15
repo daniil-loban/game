@@ -77,7 +77,7 @@ export default {
       }
     },
     check() {
-      this.$parent.setResult(this.enteredAnswer === this.expected);
+      this.$parent.setResult(+this.enteredAnswer === this.expected);
     },
   },
 };
